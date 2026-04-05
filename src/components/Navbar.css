@@ -22,12 +22,26 @@
   align-items: center;
   justify-content: space-between;
 }
+.reg {
+  font-size: 12px;
+  vertical-align: super;
+  font-weight: 400;
+  margin-left: -4px;
+}
+.leaf {
+  position: relative;
+  z-index: -1;
+  margin-left: -20px;
+  width: 25px;
+  height: 40px;
+  margin-bottom: -2px;
+}
 
 .navbar__logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-heading);
+  font-family: Nunito, sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-text);
