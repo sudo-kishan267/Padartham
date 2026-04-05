@@ -1,21 +1,21 @@
 /* ===== Design System ===== */
 :root {
   /* Colors */
- --color-bg: #0f0a06;
-  --color-bg-light: #16120a;
-  --color-bg-card: #1a150f;
-  --color-bg-glass: rgba(22, 18, 10, 0.75);
-  --color-accent: #E6B800;
-  --color-accent-light: #FFD700;
-  --color-accent-dark: #B8860B;
-  --color-text: #f5f0e8;
-  --color-text-muted: #d4a574;
-  --color-text-dim: #8b7d6b;
-  --color-border: rgba(184, 134, 11, 0.25);
-  --color-border-hover: rgba(230, 184, 0, 0.5);
-  --color-gradient-start: #E6B800;
-  --color-gradient-end: #B8860B;
-  --color-overlay: rgba(15, 10, 6, 0.65);
+ --color-bg: #0a3d3d;
+  --color-bg-light: #0f5555;
+  --color-bg-card: #0d4a4a;
+  --color-bg-glass: rgba(10, 61, 61, 0.8);
+  --color-accent: #00D96F;
+  --color-accent-light: #1FFF88;
+  --color-accent-dark: #00B559;
+  --color-text: #ffffff;
+  --color-text-muted: #a0d4d4;
+  --color-text-dim: #7ab5b5;
+  --color-border: rgba(0, 217, 111, 0.2);
+  --color-border-hover: rgba(0, 217, 111, 0.5);
+  --color-gradient-start: #00D96F ;
+  --color-gradient-end: #007EA7;
+  --color-overlay: rgba(10, 15, 12, 0.7);
 
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
