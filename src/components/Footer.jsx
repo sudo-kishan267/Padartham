@@ -30,8 +30,14 @@ function Footer() {
         <div className="footer__top">
           <div className="footer__brand">
             <a href="#hero" className="footer__logo">
-              <span className="footer__logo-icon">✦</span>
-              <span className="footer__logo-text">HANLE M&M Pvt. Ltd.</span>
+              <svg id="logo" className='footer-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+                <rect id="bg" x="0" y="0" width="140" height="140" rx="15" fill="#E0212A"></rect>
+                <polygon id="diamond" points="70,2 138,70 70,138 2,70" fill="#ffffff"></polygon>
+                <rect id="bar1" x="34" y="41" width="8" height="58" fill="#e0212a"></rect>
+                <rect id="bar2" x="98" y="41" width="8" height="58" fill="#e0212a"></rect>
+                <rect id="crossbar" x="34" y="66" width="72" height="7" fill="#e0212a"></rect>
+              </svg>
+              <span className="footer__logo-text">HANLE M&M </span>
             </a>
             <p className="footer__tagline">
               Eliminate sourcing friction. Connect with the right suppliers. Scale with confidence.

@@ -22,8 +22,15 @@
   margin-bottom: 16px;
 }
 
-.footer__logo-icon {
-  color: var(--color-accent);
+.footer__logo-text {
+  font-family: Jost, sans-serif;
+  color: #E0212A;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+.footer-logo {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .footer__tagline {
