@@ -31,18 +31,17 @@ function Footer() {
           <div className="footer__brand">
             <a href="#hero" className="footer__logo">
               <span className="footer__logo-icon">✦</span>
-              <span className="footer__logo-text">Padartham</span>
+              <span className="footer__logo-text">HANLE M&M Pvt. Ltd.</span>
             </a>
             <p className="footer__tagline">
-              Crafting extraordinary flavours from the finest ingredients since 1998. 
-              Elevating culinary experiences worldwide.
+              Eliminate sourcing friction. Connect with the right suppliers. Scale with confidence.
             </p>
             <div className="footer__socials">
               <a href="#" className="footer__social" aria-label="Instagram" id="social-instagram">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
               <a href="#" className="footer__social" aria-label="Twitter" id="social-twitter">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.514l-5.106-6.694L2.896 21.75H.588l7.728-8.835L.461 2.25h6.679l4.882 6.453z"/></svg>
               </a>
               <a href="#" className="footer__social" aria-label="LinkedIn" id="social-linkedin">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -79,7 +78,7 @@ function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {currentYear} Padartham. All rights reserved.</p>
+          <p>&copy; {currentYear} HANLE M&M Pvt. Ltd. All rights reserved.</p>
           <div className="footer__bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

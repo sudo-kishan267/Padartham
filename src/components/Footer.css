@@ -1,5 +1,5 @@
 .footer {
-  padding: 80px 0 0;
+  padding: 40px 0 0;
   background: var(--color-bg);
   border-top: 1px solid var(--color-border);
 }
@@ -14,9 +14,9 @@
 .footer__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-text);
   margin-bottom: 16px;

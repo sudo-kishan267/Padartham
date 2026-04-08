@@ -12,20 +12,21 @@ function Hero() {
       <div className="container hero__content">
         <div className="hero__badge fade-in">
           <span className="hero__badge-dot"></span>
-          Crafted with Passion Since 1998
+          Crafted with Passion Since 2024
         </div>
         
         <h1 className="hero__title fade-in">
-          Extraordinary
-          <span className="hero__title-accent"> Flavours</span>
+          Sourcing
+          <span className="hero__title-accent"><br />Aromas & Ingredients</span>
           <br />
-          for Every Creation
+           Simplified.
         </h1>
 
         <p className="hero__desc fade-in">
-          Discover our premium collection of handcrafted spices, extracts, and 
-          seasoning blends. Every ingredient is sourced from the finest origins 
-          to elevate your culinary masterpieces.
+         Connect with verified suppliers, streamline your sourcing process, 
+         and get the exact ingredients your factory needs—without the 
+         complexity. From confectionery to food manufacturing, 
+         we've got you covered.
         </p>
 
         <div className="hero__actions fade-in">
