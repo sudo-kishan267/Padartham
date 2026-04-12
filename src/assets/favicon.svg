@@ -1,0 +1,20 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Centered leaf: original leaf is 28w x 52h, scale to ~18h, center in 32x32 -->
+  <g transform="translate(16,16) rotate(30) scale(0.55) translate(-14,-26)">
+    <path
+      d="M14,52 C14,52 28,34 22,16 C18,4 14,0 14,0 C14,0 10,4 6,16 C0,34 14,52 14,52 Z"
+      fill="#0e7742"
+    />
+    <path
+      d="M14,52 C14,52 22,36 18,20 C16,10 14,2 14,2 C14,2 12,10 10,20 C6,36 14,52 14,52 Z"
+      fill="#00B559"
+      opacity="0.4"
+    />
+    <line
+      x1="14" y1="4" x2="14" y2="50"
+      stroke="#0c5832"
+      stroke-width="1"
+      opacity="0.6"
+    />
+  </g>
+</svg>
