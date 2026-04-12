@@ -15,6 +15,7 @@ function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "#hero" },
+    { label: "Company", href: "#our-company" },
     { label: "Products", href: "#products" },
     { label: "About", href: "#about" },
     { label: "Testimonials", href: "#testimonials" },

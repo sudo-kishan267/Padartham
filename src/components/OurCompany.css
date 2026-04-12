@@ -1,0 +1,841 @@
+/* =============================================
+   OurCompany Section
+   ============================================= */
+.our-company {
+  padding: var(--section-padding);
+  background: linear-gradient(180deg, var(--color-bg) 0%, #071e1e 50%, var(--color-bg) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative ambient glows */
+.our-company::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 217, 111, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.our-company::after {
+  content: '';
+  position: absolute;
+  bottom: -120px;
+  left: -120px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 126, 167, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.our-company__header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.our-company__header .section-subtitle {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =============================================
+   Tab Bar — Glassmorphism + Mobile Scroll
+   ============================================= */
+.oc-tabs {
+  margin-bottom: 48px;
+  width: 100%;
+}
+
+.oc-tabs__track {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 6px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.oc-tabs__track::-webkit-scrollbar {
+  display: none;
+}
+
+.oc-tabs__tab {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 12px 28px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-base), background var(--transition-base),
+    box-shadow var(--transition-base);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  outline-offset: 3px;
+}
+
+.oc-tabs__tab:hover {
+  color: var(--color-text);
+  background: rgba(0, 217, 111, 0.08);
+}
+
+.oc-tabs__tab--active {
+  color: var(--color-bg);
+  background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+  box-shadow: 0 4px 20px rgba(0, 217, 111, 0.35);
+}
+
+.oc-tabs__tab--active:hover {
+  color: var(--color-bg);
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+}
+
+.oc-tabs__indicator {
+  display: none;
+}
+
+/* =============================================
+   Tab Panels
+   ============================================= */
+.oc-panel {
+  display: none;
+  animation: oc-fade-up 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.oc-panel--active {
+  display: block;
+}
+
+@keyframes oc-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================================
+   GLASSMORPHISM card mixin (shared look)
+   ============================================= */
+
+/* =============================================
+   Overview Tab
+   ============================================= */
+.oc-overview {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.oc-overview__graphic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.oc-overview__globe {
+  width: 220px;
+  height: 220px;
+  position: relative;
+  filter: drop-shadow(0 0 40px rgba(0, 217, 111, 0.25));
+  background: rgba(0, 217, 111, 0.03);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.oc-overview__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.oc-overview__globe-label {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: rgba(7, 30, 30, 0.8);
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 217, 111, 0.2);
+}
+
+/* Stats bar — glass */
+.oc-overview__stats {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.oc-overview__stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  transition: background var(--transition-fast);
+}
+
+.oc-overview__stat:last-child {
+  border-right: none;
+}
+
+.oc-overview__stat:hover {
+  background: rgba(0, 217, 111, 0.05);
+}
+
+.oc-overview__stat-val {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.oc-overview__stat-lbl {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+}
+
+/* Text content — glass card */
+.oc-overview__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+}
+
+.oc-overview__para {
+  font-size: 1.02rem;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+}
+
+.oc-overview__para strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.oc-overview__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.oc-overview__tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(0, 217, 111, 0.08);
+  border: 1px solid rgba(0, 217, 111, 0.15);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.5px;
+  transition: background var(--transition-fast), border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.oc-overview__tag:hover {
+  background: rgba(0, 217, 111, 0.18);
+  border-color: rgba(0, 217, 111, 0.4);
+  transform: translateY(-1px);
+}
+
+/* =============================================
+   Industries Tab — Full-Bleed Image Cards
+   ============================================= */
+.oc-industries {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Wrapper for heading + card */
+.oc-ind-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Heading — sits above the card */
+.oc-ind-card__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 4px 14px;
+}
+
+.oc-ind-card__icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.oc-ind-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.01em;
+}
+
+/* Card with full-bleed image */
+.oc-ind-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform var(--transition-base), border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.oc-ind-wrap:hover .oc-ind-card {
+  transform: translateY(-6px);
+  border-color: rgba(0, 217, 111, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 217, 111, 0.08);
+}
+
+/* Background image — absolute, covers the whole card */
+.oc-ind-card__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  z-index: 0;
+}
+
+.oc-ind-wrap:hover .oc-ind-card__bg {
+  transform: scale(1.08);
+}
+
+/* Dark gradient overlay for text readability */
+.oc-ind-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.45) 40%,
+    rgba(0, 0, 0, 0.82) 100%
+  );
+  z-index: 1;
+}
+
+/* List content — overlaid on top of image */
+.oc-ind-card__content {
+  position: relative;
+  z-index: 2;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.oc-ind-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.oc-ind-card__list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 500;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-sm);
+  border-left: 2px solid transparent;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.oc-ind-card__list li:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.oc-ind-wrap:nth-child(1) .oc-ind-card__list li:hover {
+  border-left-color: var(--color-accent);
+}
+
+.oc-ind-wrap:nth-child(2) .oc-ind-card__list li:hover {
+  border-left-color: var(--color-accent);
+}
+
+.oc-ind-wrap:nth-child(3) .oc-ind-card__list li:hover {
+  border-left-color: var(--color-accent);
+}
+
+.oc-ind-card__bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.9;
+  box-shadow: 0 0 6px currentColor;
+}
+
+/* =============================================
+   Portfolio Tab — Glassmorphism Table
+   ============================================= */
+.oc-portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 100%;
+}
+
+.oc-portfolio__intro {
+  font-size: 1.02rem;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+
+.oc-portfolio__table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  max-width: 100%;
+}
+
+.oc-portfolio__table-wrap::-webkit-scrollbar {
+  height: 4px;
+}
+
+.oc-portfolio__table-wrap::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.oc-portfolio__table-wrap::-webkit-scrollbar-thumb {
+  background: rgba(0, 217, 111, 0.3);
+  border-radius: 4px;
+}
+
+.oc-portfolio__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+.oc-portfolio__table thead tr {
+  background: linear-gradient(135deg, rgba(0, 217, 111, 0.2), rgba(0, 126, 167, 0.2));
+}
+
+.oc-portfolio__table thead th {
+  padding: 18px 28px;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  border-bottom: 1px solid rgba(0, 217, 111, 0.2);
+}
+
+.oc-portfolio__table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background var(--transition-fast);
+}
+
+.oc-portfolio__table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.oc-portfolio__table tbody tr:hover {
+  background: rgba(0, 217, 111, 0.06);
+}
+
+.oc-portfolio__row--alt {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.oc-portfolio__table td {
+  padding: 22px 28px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  vertical-align: middle;
+  line-height: 1.7;
+}
+
+.oc-portfolio__table td:first-child {
+  color: var(--color-text);
+  font-weight: 600;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.oc-portfolio__cat-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 217, 111, 0.08);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0, 217, 111, 0.12);
+}
+
+/* =============================================
+   Why Partner Tab — Glass Cards
+   ============================================= */
+.oc-why {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.oc-why__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.oc-why__card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), border-color var(--transition-base),
+    box-shadow var(--transition-base), background var(--transition-base);
+}
+
+.oc-why__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 111, 0.03) 0%,
+    transparent 50%,
+    rgba(0, 126, 167, 0.03) 100%
+  );
+  pointer-events: none;
+}
+
+.oc-why__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-slow);
+}
+
+.oc-why__card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 217, 111, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 217, 111, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.oc-why__card:hover::after {
+  transform: scaleX(1);
+}
+
+.oc-why__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.oc-why__number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.oc-why__icon {
+  font-size: 2.2rem;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 217, 111, 0.08);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 217, 111, 0.12);
+}
+
+.oc-why__title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.oc-why__desc {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Mission Block — Glassmorphism */
+.oc-why__mission {
+  background: linear-gradient(135deg, rgba(0, 217, 111, 0.12), rgba(0, 126, 167, 0.12));
+  border: 1px solid rgba(0, 217, 111, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 2px;
+}
+
+.oc-why__mission-inner {
+  background: rgba(7, 30, 30, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: calc(var(--radius-xl) - 2px);
+  padding: 44px 52px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.oc-why__mission-inner::before {
+  content: '\201C';
+  position: absolute;
+  top: -8px;
+  left: 36px;
+  font-size: 12rem;
+  font-family: Georgia, serif;
+  color: var(--color-accent);
+  opacity: 0.06;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.oc-why__mission-inner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 217, 111, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.oc-why__mission-label {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  color: var(--color-accent);
+  margin-bottom: 18px;
+  padding: 6px 18px;
+  background: rgba(0, 217, 111, 0.08);
+  border-radius: 50px;
+  border: 1px solid rgba(0, 217, 111, 0.15);
+}
+
+.oc-why__mission-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.7;
+  font-style: italic;
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+@media (max-width: 960px) {
+  .oc-overview {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .oc-overview__graphic {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .oc-overview__text {
+    padding: 28px 24px;
+  }
+
+  .oc-industries {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .oc-why__pillars {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Tabs — shrink for mobile and ensure scrollable */
+  .oc-tabs__track {
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .oc-tabs__tab {
+    padding: 10px 18px;
+    font-size: 0.82rem;
+  }
+
+  /* Portfolio table mobile-friendly */
+  .oc-portfolio__table {
+    min-width: 420px;
+  }
+
+  .oc-portfolio__table td {
+    padding: 16px 18px;
+    font-size: 0.88rem;
+  }
+
+  .oc-portfolio__table thead th {
+    padding: 14px 18px;
+    font-size: 0.72rem;
+  }
+
+  .oc-portfolio__table td:first-child {
+    white-space: normal;
+  }
+
+  .oc-why__mission-inner {
+    padding: 32px 24px;
+  }
+
+  .oc-why__card {
+    padding: 28px 22px;
+  }
+
+  .oc-ind-card__body {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .oc-overview__globe {
+    width: 160px;
+    height: 160px;
+  }
+
+  .oc-overview__text {
+    padding: 24px 18px;
+  }
+
+  .oc-portfolio__intro {
+    padding: 16px 18px;
+    font-size: 0.92rem;
+  }
+
+  .oc-portfolio__table {
+    min-width: 380px;
+  }
+
+  .oc-portfolio__table td,
+  .oc-portfolio__table thead th {
+    padding: 12px 14px;
+  }
+}

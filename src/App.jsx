@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import OurCompany from './components/OurCompany';
 import Products from './components/Products';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
@@ -31,6 +32,7 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <OurCompany />
       <Products />
       <About />
       <Testimonials />
