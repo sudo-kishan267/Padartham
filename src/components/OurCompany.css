@@ -307,6 +307,7 @@
 .oc-ind-card__header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
   padding: 0 4px 14px;
 }
@@ -330,7 +331,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  min-height: 340px;
+  height: 340px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -379,7 +380,10 @@
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
   gap: 16px;
+  height: 100%;
 }
 
 .oc-ind-card__list {
@@ -392,8 +396,9 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  color: rgba(93, 248, 93, 0.92);
   font-weight: 500;
   padding: 8px 14px;
   background: rgba(255, 255, 255, 0.1);
@@ -436,6 +441,7 @@
 .oc-portfolio {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 32px;
   max-width: 100%;
 }
