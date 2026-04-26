@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import OurCompany from './components/OurCompany';
-import Products from './components/Products';
+import OurProducts from './components/OurProducts';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
@@ -33,7 +33,7 @@ function App() {
       <Navbar />
       <Hero />
       <OurCompany />
-      <Products />
+      <OurProducts />
       <About />
       <Testimonials />
       <Contact />
