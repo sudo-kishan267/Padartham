@@ -126,21 +126,23 @@
 
 @media (max-width: 768px) {
   .navbar__links {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
     background: rgba(10, 10, 10, 0.97);
     flex-direction: column;
     justify-content: center;
     gap: 32px;
-    transform: translateX(100%);
-    transition: var(--transition-slow);
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path 0.4s ease;
+    z-index: 999;
   }
 
   .navbar__links--open {
-    transform: translateX(0);
+    clip-path: inset(0 0 0 0);
   }
 
   .navbar__link {
@@ -154,5 +156,7 @@
 
   .navbar__hamburger {
     display: flex;
+    z-index: 1001;
+    position: relative;
   }
 }
